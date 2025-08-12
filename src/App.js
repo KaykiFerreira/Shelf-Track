@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// Categorias fixas na ordem desejada
+import Header from './components/Header/Header';
+import SearchFilter from './components/SearchFilter/SearchFilter';
+import Legend from './components/Legend/Legend';
+import Categoria from './components/Categoria/Categoria';
+
 const categoriasFixas = [
   'Amendo Chef',
   'Bombons Happy',
@@ -18,7 +22,6 @@ const categoriasFixas = [
   'Tetop e Top Mellow'
 ];
 
-// Produtos com categorias atualizadas
 const produtos = [
   { id: 1, nome: 'Doce de Amendoim', categoria: 'Doces de Amendoim', estoque: 12, status: 'verde', vencimento: '1 ano', peso: 320 },
   { id: 2, nome: 'Bombom Happy', categoria: 'Bombons Happy', estoque: 8, status: 'amarelo', vencimento: '3 meses', peso: 150 },
@@ -30,47 +33,6 @@ const produtos = [
   { id: 8, nome: 'ChocoMais', categoria: 'Chocomais', estoque: 1, status: 'vermelho', vencimento: 'Lote vencido', peso: 30 },
 ];
 
-function IconeStatus({ status }) {
-  if (status === 'verde') return <span style={{color: 'green'}}>✔️</span>;
-  if (status === 'amarelo') return <span style={{color: 'orange'}}>⚠️</span>;
-  if (status === 'vermelho') return <span style={{color: 'red'}}>❌</span>;
-  return null;
-}
-
-function Categoria({ nome, produtos }) {
-  const [aberto, setAberto] = useState(true);
-
-  return (
-    <div className="categoria-card">
-      <h2 
-        onClick={() => setAberto(!aberto)} 
-        style={{ cursor: 'pointer', userSelect: 'none' }}
-      >
-        {nome}
-      </h2>
-      {aberto && (
-        produtos.length > 0 ? (
-          <div className="product-list">
-            {produtos.map(produto => (
-              <div key={produto.id} className="product-card">
-                <div className="product-icon">🥜</div>
-                <h3 className="product-name">{produto.nome}</h3>
-                <p className="product-stock">{produto.estoque} lotes em estoque</p>
-                <p className={`product-status status-${produto.status}`}>
-                  {produto.status === 'vermelho' ? 'Lote vencido' : `Vence em ${produto.vencimento}`}
-                </p>
-                <p className="product-weight">{produto.peso} kg</p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p style={{ fontStyle: 'italic', color: '#888' }}>Sem produtos disponíveis.</p>
-        )
-      )}
-    </div>
-  );
-}
-
 function App() {
   const [busca, setBusca] = useState('');
   const [dataFiltro, setDataFiltro] = useState('');
@@ -81,55 +43,24 @@ function App() {
 
   return (
     <div className="app-container">
-      <header className="header">
-  <div className="header-left">
-    <img 
-      src="/logo.png"
-      alt="Logo" 
-      className="header-logo" 
-    />
-    <div className="header-title">Jazam</div>
-    <button className="header-button">Estoque</button>
-  </div>
-  <div className="notification">
-    <span role="img" aria-label="notifications">🔔</span>
-  </div>
-</header>
-<div className="search-container">
-      <div className="search-filter">
-        <input
-          type="text"
-          placeholder="Buscar por categoria ou nome do produto..."
-          value={busca}
-          onChange={e => setBusca(e.target.value)}
-          className="input-text"
+      <Header />
+      <div className="search-container">
+        <SearchFilter
+          busca={busca}
+          setBusca={setBusca}
+          dataFiltro={dataFiltro}
+          setDataFiltro={setDataFiltro}
         />
-        <input
-          type="date"
-          value={dataFiltro}
-          onChange={e => setDataFiltro(e.target.value)}
-          className="input-date"
-        />
-        <button className="filter-button">Filtrar</button>
-      </div>
-      <div className="legend">
-        <strong>Legenda de Status:</strong>
-        <div className="legend-items">
-          <div><IconeStatus status="verde" /> Vence em mais de 6 meses</div>
-          <div><IconeStatus status="amarelo" /> Vence em menos de 6 meses</div>
-          <div><IconeStatus status="vermelho" /> Lote vencido</div>
+        <Legend />
+        <div className="categorias-container">
+          {categoriasFixas.map(categoria => {
+            const produtosDaCategoria = produtosFiltrados.filter(p => p.categoria === categoria);
+            return (
+              <Categoria key={categoria} nome={categoria} produtos={produtosDaCategoria} />
+            );
+          })}
         </div>
       </div>
-
-      <div className="categorias-container">
-        {categoriasFixas.map(categoria => {
-          const produtosDaCategoria = produtosFiltrados.filter(p => p.categoria === categoria);
-          return (
-            <Categoria key={categoria} nome={categoria} produtos={produtosDaCategoria} />
-          );
-        })}
-      </div>
-    </div>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+.categoria-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #ccc;
+  padding: 15px;
+}
+
+.categoria-card h2 {
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

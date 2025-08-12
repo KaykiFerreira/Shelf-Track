@@ -1,0 +1,203 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  background-color: #FEF5E7;
+  min-height: 100vh;
+}
+.search-container{
+  font-family: Arial, sans-serif;
+  background-color: #FEF5E7;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-color: #D57E00;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* espaço entre os grupos */
+  align-items: center;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre logo, título e botão */
+}
+
+.header-logo {
+  width: 80px;      /* ajuste o tamanho que preferir */
+  height: 80px;
+  object-fit: contain;
+  border-radius: 5px; /* opcional: borda arredondada */
+}
+
+
+.header-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.header-button {
+  background-color: rgb(180 83 9 / var(--tw-bg-opacity, 1));
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.notification {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.notification-count {
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* Busca e filtro */
+.search-filter {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.input-text, .input-date {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+}
+
+.input-date {
+  flex-grow: 0;
+}
+
+.filter-button {
+  background-color: #F7A600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Legenda */
+.legend {
+  background-color: white;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+.legend-items {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* Categorias */
+.categorias-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Categoria card */
+.categoria-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #ccc;
+  padding: 15px;
+}
+
+/* Título da categoria - clicável */
+.categoria-card h2 {
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Setas */
+.categoria-card h2::after {
+  content: '';
+  margin-left: 8px;
+}
+
+/* Lista de produtos dentro da categoria */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Card do produto */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Ícone do produto */
+.product-icon {
+  font-size: 24px;
+}
+
+/* Nome do produto */
+.product-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Estoque */
+.product-stock {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Status com cores */
+.product-status {
+  margin: 0;
+  font-weight: bold;
+}
+
+.status-verde {
+  color: green;
+}
+
+.status-amarelo {
+  color: orange;
+}
+
+.status-vermelho {
+  color: red;
+}
+
+/* Peso */
+.product-weight {
+  color: #f7a600;
+  font-weight: bold;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Ajuste das setas no título pelo JS, mas se quiser pode mudar aqui */
+

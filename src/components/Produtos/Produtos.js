@@ -11,7 +11,7 @@ function Produto({ nome, estoque, status, vencimento, peso }) {
         {status === 'vermelho' ? 'Lote vencido' : `Vence em ${vencimento}`}
       </p>
       <p className="product-weight">{peso} kg</p>
-    </div>
+    </div>  
   );
 }
 

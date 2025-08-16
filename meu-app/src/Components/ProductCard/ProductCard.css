@@ -1,0 +1,289 @@
+.product-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.product-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.product-card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.product-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.peso {
+  font-weight: bold;
+  color: #e67e22;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 32px;
+}
+
+.modal-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 2rem 2.5rem;
+  width: 540px;
+  max-width: 95vw;
+  position: relative;
+  animation: modalIn 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-card.modal-single {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  padding: 2rem 2.5rem;
+  width: 600px;
+  max-width: 95vw;
+  position: relative;
+  animation: modalIn 0.25s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  width: 32px;
+  height: 32px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  color: #e74c3c;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.modal-close:hover {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header-single {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header-single h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+.modal-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f7f7f7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.modal-main {
+  display: flex;
+  gap: 2rem;
+}
+
+.modal-info-geral {
+  background: #fff7e6;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  flex: 1;
+  font-size: 1rem;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-info-geral-single {
+  background: #fff7e6;
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem;
+  font-size: 1.05rem;
+  min-width: 200px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.modal-info-geral h4 {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+}
+
+.modal-info-geral b {
+  font-weight: bold;
+}
+
+.modal-info-geral .modal-vencimento {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.modal-content-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start; /* Garante alinhamento pelo topo */
+}
+
+.modal-lotes-single {
+  flex: 1.2;
+  min-height: 220px;
+  min-width: 300px; /* Mesma altura mínima para ambos */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+.modal-lotes h4 {
+  font-weight: bold;
+  margin-bottom: 0.3  rem;
+}
+
+.modal-lotes-single h4 {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.08rem;
+  margin-block-start: 0;
+}
+
+.modal-lote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.modal-lote-single {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.9rem;
+  font-size: 1.05rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.modal-lote-single:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.modal-lote-single b {
+  color: #222;
+}
+
+.modal-lote-single span {
+  font-weight: bold;
+  color: #222;
+}
+
+.modal-lote-single .modal-status.ok { color: #27ae60; font-size: 1.2rem; margin-left: 6px;}
+.modal-lote-single .modal-status.alerta { color: #f39c12; font-size: 1.2rem; margin-left: 6px;}
+.modal-lote-single .modal-status.vencido { color: #e74c3c; font-size: 1.2rem; margin-left: 6px;}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.modal-add {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-export {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes modalIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

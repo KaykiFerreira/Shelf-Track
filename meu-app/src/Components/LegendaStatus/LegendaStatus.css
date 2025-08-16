@@ -1,0 +1,44 @@
+.legend-container {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.legend-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: white;
+  font-weight: bold;
+}
+
+.green {
+  background-color: #22c55e; /* verde */
+}
+
+.yellow {
+  background-color: #facc15; /* amarelo */
+  color: black;
+}
+
+.red {
+  background-color: #ef4444; /* vermelho */
+}
